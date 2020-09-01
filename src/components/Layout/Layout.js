@@ -11,14 +11,21 @@ const Layout = (props) => {
     //console.log(props, window.location.href)
     //const [location, setLocation ] = useState(window.location.href.split('/')[window.location.href.split('/').length - 1])
     const [location, setLocation ] = useState(null)
+    const [navState, setNavState] = useState(classes.extended)
 
     useEffect( () => {
 
     }, [])
-    //const location= window.location.href.split('/')[window.location.href.split('/').length - 1]
-    
 
-    //console.log('[L]', location,locationArray.length,  locationArray, window.location.href)
+    window.addEventListener('scroll', () => {
+        console.log(window.scrollY)
+        if( window.scrollY  > 50 && navState !== classes.shrink){
+            setNavState(classes.shrink)
+        } else if ( window.scrollY <= 50 && navState !== classes.extended ) {
+            setNavState(classes.extended)
+        }
+    })
+
     const currentStyle = {
         color:"var(--grey-3)", 
         borderBottom: "1px solid var(--grey-3)", 
@@ -28,7 +35,7 @@ const Layout = (props) => {
 
     return (
         <div className={classes.container}>
-            <nav className={classes.nav}>
+            <nav className={classes.nav + ' '+ navState}>
                  <Link to='/home' className={classes.link}><h1 className={classes.h1}>Nerea Molina</h1></Link>
                 <div className={classes.links}>
                     <NavLink activeStyle={currentStyle} to='/home'className={classes.link +' '+ (location==='home' ? classes.current : null)}>Home</NavLink>
