@@ -11,10 +11,29 @@ const Layout = (props) => {
     //const [location, setLocation ] = useState(null)
     //const [navState, setNavState] = useState(classes.extended)
     const [navShrink, setNavShrink] = useState(false)
+    const [disMode, setDM] = useState(null)
+    const [disMenu, setDisMenu] = useState(false)
 
     useEffect( () => {
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            console.log('mobile')
+            setDM('mobile')
+        }else{
+            console.log('desktop')
+            setDM('desktop')
+        }
 
     }, [])
+
+    const handleMenu = (e) => {
+        e.preventDefault()
+        console.log('MENU', disMenu)
+        if(disMenu){
+            setDisMenu( false )
+        } else {
+            setDisMenu (true)
+        }
+    }
 
     window.addEventListener('scroll', () => {
         console.log(window.scrollY)
@@ -28,7 +47,7 @@ const Layout = (props) => {
 
     return (
         <div className={classes.container}>
-            <Navbar shrink={navShrink}/>
+        <Navbar mode={disMode} shrink={navShrink} disMenu={disMenu} handleMenu={(e) => handleMenu(e)}/>
             <div className={classes.children}>
                 {props.children}
             </div>
