@@ -43,9 +43,6 @@
     display: flex
     align-items: flex-end
 
-.menu
-  //display:
-  background: red
 
 .link
     transition: all .2s
@@ -92,26 +89,40 @@
       margin-bottom: .2rem
 
 .menu
-    transition: all .4s
+    transition: all .4s ease-out
     position: fixed
     top: 0
     left: 0
     height: 100%
     width: 100%
+    //background: rgba(var(--grey-3), .7)
     background: var(--grey-3)
-    z-index: 5999
+    opacity: .90
+    z-index: 7000
     display: flex
-    flex-flow: column
-    justify-content: center
+    //flex-flow: column
+    justify-content: space-between
     align-items: center
+    padding: 5rem
+    .arrow
+        width: 2rem
+        height: 4rem
+    .links
+        display: flex
+        flex-flow: column
+        justify-content: center
+        align-items: flex-end
     .link
+        opacity: 1
         font-size: 3rem
-        align-self: center
+        //align-self: center
         color: var(--grey-1)
+        margin: 0
         &:not(:first-child)
             margin-top: 4rem
 
 .menuHidden
+    opacity: 0
     left: -100%
 
 .hidden

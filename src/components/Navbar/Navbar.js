@@ -6,6 +6,8 @@ import Instagram from '../../assets/instagram.svg'
 
 import classes from './Navbar.module.sass'
 
+import leftArrow from '../../assets/svg/left-arrow.png'
+
 const navbar = (props) => {
     let currentStyle
     console.log(props)
@@ -33,7 +35,7 @@ const navbar = (props) => {
     } else {
          currentStyle = {
             color:"var(--grey-1)", 
-            borderBottom: "1px solid var(--grey-3)", 
+            borderBottom: "1px solid var(--grey-1)", 
             paddingBottom: ".3em",
             marginBottom: "-.3em"
         }
@@ -45,10 +47,15 @@ const navbar = (props) => {
                     <div className={classes.hamContent}/>
                 </a>
             </nav>
-            <div className={classes.links+' '+classes.menu+' '+(props.disMenu ? null:classes.menuHidden)}>
-                <NavLink activeStyle={currentStyle} onClick={() => props.handleMenu(null)} to='/home'className={classes.link}>Home</NavLink>
-                <NavLink activeStyle={currentStyle} onClick={() => props.handleMenu(null)} to='/aboutme' className={classes.link}>About me</NavLink>
-                <NavLink activeStyle={currentStyle} to='/contact' onClick={() => props.handleMenu(null)} className={classes.link}>Contact</NavLink>
+            <div className={/*classes.links+' '+*/classes.menu+' '+(props.disMenu ? null:classes.menuHidden)}>
+                <a href="#" onClick={props.handleMenu} className={classes.arrowLink}>
+                    <img src={leftArrow} className={classes.arrow}/>
+                </a>
+                <div className={classes.links}>
+                    <NavLink activeStyle={currentStyle} onClick={() => props.handleMenu(null)} to='/home'className={classes.link}>Home</NavLink>
+                    <NavLink activeStyle={currentStyle} onClick={() => props.handleMenu(null)} to='/aboutme' className={classes.link}>About me</NavLink>
+                    <NavLink activeStyle={currentStyle} to='/contact' onClick={() => props.handleMenu(null)} className={classes.link}>Contact</NavLink>
+                </div>
             </div>
             </>
         )
