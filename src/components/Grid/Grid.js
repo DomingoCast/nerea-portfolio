@@ -15,7 +15,7 @@ const grid = (props) => {
         ))
     } else if(props.type === 'sessions'){
         elements = props.elements.map((element , index)=> (
-            <Link to={`/session/${element.path}`} key={index}>
+            <Link className={classes.sessionLink}to={`/session/${element.path}`} key={index}>
                 <div className={classes.session}>
                     <p className={classes.name}>{element.name}</p>
                     <div className={classes.mask}/>

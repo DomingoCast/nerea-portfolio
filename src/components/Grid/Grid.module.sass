@@ -21,11 +21,19 @@
     overflow: hidden
     //border: 3px solid black
     margin: 2rem
+    display: flex
+    justify-content: center
+    align-items: center
     .element
         //border: 3px solid yellow
         transition: all .4s
         &:hover
             transform: scale(1.05)
+    .link
+        margin: auto
+        display: flex
+        justify-content: center
+        align-items: center
 
 .session
     position: relative
@@ -69,10 +77,11 @@
         //border: 3px solid yellow
 
 @media screen and (max-width: 80em)
-  .element
-      max-width: 90%
-      min-width: 80%
-      max-height: 90%
-      min-height: 20%
-      margin: auto
-      margin-bottom: 5%
+    .element
+        max-width: 100%
+        min-width: 80%
+        max-height: 90%
+        min-height: 20%
+        margin: auto
+    .image
+        margin: 1rem 0
