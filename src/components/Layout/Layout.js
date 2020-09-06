@@ -26,7 +26,10 @@ const Layout = (props) => {
     }, [])
 
     const handleMenu = (e) => {
-        e.preventDefault()
+        if(e){
+            e.preventDefault()
+        }
+
         console.log('MENU', disMenu)
         if(disMenu){
             setDisMenu( false )

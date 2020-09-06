@@ -7,15 +7,16 @@ import Instagram from '../../assets/instagram.svg'
 import classes from './Navbar.module.sass'
 
 const navbar = (props) => {
-    const currentStyle = {
-        color:"var(--grey-3)", 
-        borderBottom: "1px solid var(--grey-3)", 
-        paddingBottom: ".3em",
-        marginBottom: "-.3em"
-    }
+    let currentStyle
     console.log(props)
     let navContent
     if(props.mode==='desktop'){
+         currentStyle = {
+            color:"var(--grey-3)", 
+            borderBottom: "1px solid var(--grey-3)", 
+            paddingBottom: ".3em",
+            marginBottom: "-.3em"
+        }
         navContent = (
             <nav className={classes.nav + ' '+ (props.shrink?classes.shrink:null)}>
                 <Link to='/home' className={classes.link}><h1 className={classes.h1}>Nerea Molina</h1></Link>
@@ -30,6 +31,12 @@ const navbar = (props) => {
             </nav>
         )
     } else {
+         currentStyle = {
+            color:"var(--grey-1)", 
+            borderBottom: "1px solid var(--grey-3)", 
+            paddingBottom: ".3em",
+            marginBottom: "-.3em"
+        }
         navContent = (
             <>
             <nav className={classes.nav + ' '+ (props.shrink?classes.shrink:null)}>
@@ -38,12 +45,10 @@ const navbar = (props) => {
                     <div className={classes.hamContent}/>
                 </a>
             </nav>
-            <div className={classes.links+' '+classes.menu+' '+(props.disMenu ? null:classes.hidden)}>
-                <div className={(props.disMenu?null:classes.hidden)}>
-                    <NavLink activeStyle={currentStyle} to='/home'className={classes.link}>Home</NavLink>
-                    <NavLink activeStyle={currentStyle} to='/aboutme' className={classes.link}>About me</NavLink>
-                    <NavLink activeStyle={currentStyle} to='/contact' className={classes.link}>Contact</NavLink>
-                </div>
+            <div className={classes.links+' '+classes.menu+' '+(props.disMenu ? null:classes.menuHidden)}>
+                <NavLink activeStyle={currentStyle} onClick={() => props.handleMenu(null)} to='/home'className={classes.link}>Home</NavLink>
+                <NavLink activeStyle={currentStyle} onClick={() => props.handleMenu(null)} to='/aboutme' className={classes.link}>About me</NavLink>
+                <NavLink activeStyle={currentStyle} to='/contact' onClick={() => props.handleMenu(null)} className={classes.link}>Contact</NavLink>
             </div>
             </>
         )
