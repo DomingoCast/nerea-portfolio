@@ -60,6 +60,19 @@
     max-width: 95vw
     max-height: 95vh
 
+.back
+    position: absolute
+    right: 2rem
+    bottom: 2rem
+    z-index: 8100
+    font-size: 2.5rem
+    transition: all .2s
+    &:link, &:visited
+        color: var(--grey-2)
+        text-decoration: none
+    &:hover
+        color: var(--grey-1)
+
 .hidden
     opacity: 0
     pointer-events: none
@@ -68,3 +81,8 @@
         //height: 0
         opacity: 0
 
+@media screen and (max-width: 80em)
+    .back
+        bottom: -3rem
+        right: 1rem
+        color: var(--grey-3)

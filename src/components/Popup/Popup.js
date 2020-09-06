@@ -10,6 +10,7 @@ const popup = (props) => {
                 <img className={classes.img} src={props.image} alt="expanded superpwer"/>
                 <a href="#" className={classes.link +' '+classes.left} onClick={props.previous}/>
                 <a href="#" className={classes.link +' '+classes.right} onClick={props.next}/>
+                <a href="#" className={classes.back} onClick={props.popDown}>back</a>
             </div>
         </div>
     )
