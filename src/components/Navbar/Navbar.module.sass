@@ -46,7 +46,20 @@
 
 .link
     transition: all .2s
+    //-webkit-touch-callout: none
+    //-webkit-user-select: none
+    //-khtml-user-select: none
+    //-moz-user-select: none
+    //-ms-user-select: none
+    //user-select: none
+    -webkit-tap-highlight-color: transparent
     &:link, &:visited
+        //-webkit-touch-callout: none
+        //-webkit-user-select: none
+        //-khtml-user-select: none
+        //-moz-user-select: none
+        //-ms-user-select: none
+        //user-select: none
         color: var(--grey-2)
         text-decoration: none
         text-transform: uppercase
@@ -73,6 +86,7 @@
     //bottom: 0
 
 .ham
+    -webkit-tap-highlight-color: transparent
     align-self: center
 .hamContent
     width: 3rem
@@ -102,30 +116,48 @@
     opacity: .90
     z-index: 7000
     display: flex
-    //flex-flow: column
+
+    flex-flow: row-reverse
+
     justify-content: space-between
     align-items: center
     padding: 5rem
     .arrow
         width: 2rem
         height: 4rem
+        transform: rotate(180deg)
     .links
         display: flex
         flex-flow: column
         justify-content: center
-        align-items: flex-end
+
+        align-items: flex-start
+
     .link
         opacity: 1
         font-size: 3rem
         //align-self: center
         color: var(--grey-1)
         margin: 0
+        &:link, &:visited
+            color: var(--grey-1)
         &:not(:first-child)
             margin-top: 4rem
+    .insta
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 6rem
+        .svg
+            height: 3rem
+            width: 3rem
+            margin: 0
+        
+        
 
 .menuHidden
     opacity: 0
-    left: -100%
+    left: 100%
 
 .hidden
     display: none
