@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Walkaway';
+  src: local('Walkaway'), url(./assets/fonts/Walkway-Bold.tff) format('truetype'); }
+
+body{
+    font-family: Walkaway, sans
+}

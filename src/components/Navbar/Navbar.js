@@ -3,6 +3,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 import Instagram from '../../assets/instagram.svg'
+import InstagramWhite from '../../assets/svg/instagram-grey-1.svg'
 
 import classes from './Navbar.module.sass'
 
@@ -56,6 +57,9 @@ const navbar = (props) => {
                     <NavLink activeStyle={currentStyle} onClick={() => props.handleMenu(null)} to='/aboutme' className={classes.link}>About me</NavLink>
                     <NavLink activeStyle={currentStyle} to='/contact' onClick={() => props.handleMenu(null)} className={classes.link}>Contact</NavLink>
                 </div>
+                <a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/nereamolina__/' className={classes.link +' '+ classes.insta}>
+                    <img className={classes.svg} src={InstagramWhite} alt='INSTAGRAM'/>
+                </a>
             </div>
             </>
         )

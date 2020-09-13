@@ -1,6 +1,7 @@
 .container
     background: var(--grey-1)
     min-height: 100vh
+    //height: 100%
     width: 100vw
     padding: 5rem 10rem
     padding-top: 13rem
@@ -11,8 +12,9 @@
     border-bottom: 2px solid var(--grey-3)
 
 .children
-    height: calc(100vh - 18rem)
+    min-height: calc(100vh - 18rem)
     width: 100%
+    padding: 0 10%
 
 @media screen and (max-width: 80em)
     .container
