@@ -9,7 +9,8 @@ import sessions from '../../assets/database/sessions'
 import classes from './Menu.module.sass'
 
 const currentStyle = {
-    color: "white"
+    color: "var(--white)",
+    fontWeight: "500"
 }
 
 const menu = (props) => {

@@ -26,6 +26,18 @@ const grid = (props) => {
     } else {
         elements = props.elements.map(element => <div className={classes.element}> {element}</div>)
     }
+    let v1, v2, v3
+    let vs = []
+    const n = 4
+    for (let i=0; i<n; i++){
+        vs.push([])
+    }
+    console.log('[VS]', vs)
+
+    //for(el of props.elements){
+        
+    //}
+
     return (
         <div className={classes.container}>
             {elements}
