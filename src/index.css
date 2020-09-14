@@ -1,7 +1,19 @@
 @font-face {
-  font-family: 'Walkaway';
-  src: local('Walkaway'), url(./assets/fonts/Walkway-Bold.tff) format('truetype'); }
+  font-family: 'SugoPro-Thin';
+  src: local('SugoPro'), url(./assets/fonts/Sugo-Pro-Classic-Thin-trial.ttf) format('truetype'); }
 
-body{
-    font-family: Walkaway, sans
-}
+@font-face {
+  font-family: 'SugoPro-Light';
+  src: local('SugoPro'), url(./assets/fonts/Sugo-Pro-Classic-Light-trial.ttf) format('truetype'); }
+
+@font-face {
+  font-family: 'SugoPro-ExtraLight';
+  src: local('SugoPro'), url(./assets/fonts/Sugo-Pro-Classic-ExtraLight-trial.ttf) format('truetype'); }
+
+@font-face {
+  font-family: 'SugoPro-Regular';
+  src: local('SugoPro-Regular'), url(./assets/fonts/Sugo-Pro-Classic-Regular-trial.ttf) format('truetype'); }
+
+/*body{*/
+    /*font-family: SugoPro, serif*/
+/*}*/

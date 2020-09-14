@@ -4,12 +4,10 @@ import React, {useState, useEffect} from 'react'
 import classes from './Layout.module.sass'
 
 import Navbar from '../Navbar/Navbar'
+import Menu from '../Menu/Menu'
+//Menu/
 
 const Layout = (props) => {
-    //console.log(props, window.location.href)
-    //const [location, setLocation ] = useState(window.location.href.split('/')[window.location.href.split('/').length - 1])
-    //const [location, setLocation ] = useState(null)
-    //const [navState, setNavState] = useState(classes.extended)
     const [navShrink, setNavShrink] = useState(false)
     const [disMode, setDM] = useState(null)
     const [disMenu, setDisMenu] = useState(false)
@@ -50,7 +48,8 @@ const Layout = (props) => {
 
     return (
         <div className={classes.container}>
-        <Navbar mode={disMode} shrink={navShrink} disMenu={disMenu} handleMenu={(e) => handleMenu(e)}/>
+        <Navbar mode={disMode} shrink={navShrink} disMenu={disMenu} handleMenu={(e) => disMenu?console.log('nice try'):handleMenu(e)}/>
+        <Menu display={disMenu} handleMenu={handleMenu}/>
             <div className={classes.children}>
                 {props.children}
             </div>

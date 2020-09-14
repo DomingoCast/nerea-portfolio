@@ -1,48 +1,23 @@
-
-.nav
-    padding: 5rem 10rem
+.container
     position: fixed
-
-    width: 100%
     top: 0
     left: 0
+    width: 20rem
+    height: 100vh
+    background: var(--grey-3)
     display: flex
-    flex-flow: row
-    //justify-content: space-between
     justify-content: center
-    align-items: flex-end
-    //margin-bottom: 5rem
+    align-items: center
 
-    align-items: baseline
-    transition: all .5s
-    z-index: 6000
 
-.shrink
-    position: fixed
-
-    top: 0
-    left: 0
-    width: 100%
-    //background: var(--grey-1)
-    padding: 3rem 10rem
-
-.h1
-    color: var(--grey-2)
-    text-transform: uppercase
-    font-weight: 400
-    letter-spacing: -.08em
-    font-size: 3rem
-    transition: all .2s
-    //&:link, &:visited
-        //color: var(--grey-2)
-        //text-decoration: none
-    &:hover
-        color: var(--grey-3)
-        
 
 .links
     display: flex
-    align-items: flex-end
+    flex-flow: column
+    align-items: flex-start
+    justify-content: space-between
+    height: 30rem
+    margin-right: 3rem
 
 
 .link
@@ -61,7 +36,7 @@
         //-moz-user-select: none
         //-ms-user-select: none
         //user-select: none
-        color: var(--grey-2)
+        color: var(--grey-1)
         text-decoration: none
         text-transform: uppercase
         font-size: 1.8rem
@@ -70,7 +45,7 @@
     &:not(:last-child)
         margin-right: 2rem
     &:hover
-        color: var(--grey-3)
+        color: var(--grey-1)
         
 
 //.insta
@@ -156,26 +131,6 @@
             margin-top: 4rem
     .insta
         position: absolute
-        left: 50%
-        transform: translateX(-50%)
-        bottom: 6rem
-        .svg
-            height: 3rem
-            width: 3rem
-            margin: 0
-
-.menuHidden
-    opacity: 0
-    left: 100%
 
 .hidden
     display: none
-
-.disable
-    pointer-events: none
-
-@media screen and (max-width: 80em)
-  .nav
-      padding: 3% 5%
-      position: fixed
-
