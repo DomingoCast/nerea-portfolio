@@ -1,26 +1,41 @@
 .container
+    //display: flex
+    //flex-flow: column
+    //align-items: center
+    //flex-wrap: wrap
+    //justify-content: space-evenly
+
+    //in rows
     display: flex
-    flex-flow: column
-    align-items: center
-    flex-wrap: wrap
-    justify-content: space-evenly
+
+.column
+    //width: calc(100% / 3)
+    overflow: hidden
+    flex-basis: 0
+    flex-grow: 1
+    &:not(:last-child)
+        margin-right: 2%
 
 .element
     //border: 3px solid yellow
-    max-width: 60rem
-    min-width: 30rem
-    max-height: 60rem
-    min-height: 30rem
+    max-width: 100%
+    //min-width: 30rem
+    //max-height: 30vh
+    //min-height: 30rem
+    margin: auto
+
 
 
 .image
-    max-width: 60rem
-    min-width: 30rem
-    max-height: 60rem
-    min-height: 30rem
+    margin-bottom: 1rem
+    //max-width: 60rem
+    //min-width: 30rem
+    //max-height: 60rem
+    //min-height: 30rem
+    max-width: 100%
+    max-height: 100%
     overflow: hidden
     //border: 3px solid black
-    margin: 2rem
     display: flex
     justify-content: center
     align-items: center
@@ -37,9 +52,9 @@
         align-items: center
 
 .session
+    margin-bottom: 1rem
     position: relative
     //border: 3px solid black
-    margin: 2rem
     &:hover
         .name
             opacity: 1

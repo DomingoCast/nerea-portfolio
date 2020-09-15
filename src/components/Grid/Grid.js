@@ -28,19 +28,30 @@ const grid = (props) => {
     }
     let v1, v2, v3
     let vs = []
-    const n = 4
+    console.log('[EL]', elements)
+    const n = 3
     for (let i=0; i<n; i++){
         vs.push([])
+        let c = 0 + i
+        while(c<elements.length){
+            vs[i].push(elements[c])
+            c += n
+        }
     }
     console.log('[VS]', vs)
 
     //for(el of props.elements){
         
     //}
+    const newElements = vs.map( row => (
+            <div className={classes.column}> {row} </div>
+        )
+    )
 
     return (
         <div className={classes.container}>
-            {elements}
+            {newElements}
+            
         </div>
 
     )

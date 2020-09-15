@@ -37,7 +37,7 @@ const Layout = (props) => {
     }
 
     window.addEventListener('scroll', () => {
-        console.log(window.scrollY)
+        //console.log(window.scrollY)
         if( window.scrollY  > 50 && !navShrink){
             setNavShrink(true)
         } else if ( window.scrollY <= 50 && navShrink ) {
