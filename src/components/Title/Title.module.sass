@@ -1,0 +1,31 @@
+.container
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  background: url(../../assets/database/desktop-back.jpg)
+  background-size: cover
+  background-position: left center 
+  background-size: 120% auto
+
+.link
+
+    &:link, &:visited
+      color: var(--grey-30)
+      text-decoration: none
+
+.h1
+    text-transform: uppercase
+    font-weight: 600
+    color: var(--white)
+
+@media screen and (max-width: 40em)
+    .container
+        background: url(../../assets/database/mobile-back.jpg)
+        background-position: center
+        background-size: cover
+

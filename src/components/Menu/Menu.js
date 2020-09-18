@@ -15,10 +15,21 @@ const currentStyle = {
 
 const menu = (props) => {
     console.log('[SESSIONS]', sessions)
-    return(
+    const sessionLinks = Object.keys(sessions).map(sessionID => {
+        const session = sessions[sessionID]
+        return(
+            <NavLink activeStyle={currentStyle} to={'/session/'+session.path} className={classes.session+' '+classes.link}>{session.name}</NavLink>
+        )}
+    )
+                //{sessionLinks}
+     return(
         <div onMouseLeave={props.handleMenu} className={classes.container+' '+(props.display?null:classes.hidden)}>
             <div className={classes.links}>
-                <NavLink activeStyle={currentStyle} to='/home'className={classes.link}>Home</NavLink>
+                <NavLink activeStyle={currentStyle} to='/home' className={classes.link}>Home</NavLink>
+                <div className={classes.sessionsContainer}>
+                    <span className={classes.span}>SESSIONS</span>
+                    {sessionLinks}
+                </div>
                 <NavLink activeStyle={currentStyle} to='/aboutme' className={classes.link}>About me</NavLink>
                 <NavLink activeStyle={currentStyle} to='/contact' className={classes.link}>Contact</NavLink>
                 <a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/nereamolina__/' className={classes.link +' '+ classes.insta}>

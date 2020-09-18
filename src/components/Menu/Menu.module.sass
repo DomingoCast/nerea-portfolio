@@ -9,8 +9,7 @@
     justify-content: center
     align-items: center
     transition: all .4s ease-out
-
-
+    z-index: 8000
 
 .links
     display: flex
@@ -23,20 +22,8 @@
 
 .link
     transition: all .2s
-    //-webkit-touch-callout: none
-    //-webkit-user-select: none
-    //-khtml-user-select: none
-    //-moz-user-select: none
-    //-ms-user-select: none
-    //user-select: none
     -webkit-tap-highlight-color: transparent
     &:link, &:visited
-        //-webkit-touch-callout: none
-        //-webkit-user-select: none
-        //-khtml-user-select: none
-        //-moz-user-select: none
-        //-ms-user-select: none
-        //user-select: none
         color: var(--grey-1)
         text-decoration: none
         text-transform: uppercase
@@ -47,11 +34,22 @@
         margin-right: 2rem
     &:hover
         color: var(--white)
-        
 
-//.insta
-    //display: flex
-    //align-items: center
+.sessionsContainer
+    display: flex
+    flex-flow: column
+    .span
+        font-size: 1.8rem
+        color: var(--grey-1)
+        text-decoration: none
+        text-transform: uppercase
+        margin-bottom: .8rem
+    .link
+        font-size: 1.5rem
+        text-transform: capitalize
+        &:not(:last-child)
+            margin-bottom: .3rem
+
 
 .svg
     height: 1.8rem
@@ -89,49 +87,5 @@
     &_3
         width: 70%
 
-// ######### USELESS ###########
-
-.menu
-    transition: all .4s ease-out
-    position: fixed
-    top: 0
-    left: 0
-    height: 100%
-    width: 100%
-    //background: rgba(var(--grey-3), .7)
-    background: var(--grey-3)
-    opacity: .90
-    z-index: 7000
-    display: flex
-
-    flex-flow: row-reverse
-
-    justify-content: space-between
-    align-items: center
-    padding: 5rem
-    .arrow
-        width: 2rem
-        height: 4rem
-        transform: rotate(180deg)
-    .links
-        display: flex
-        flex-flow: column
-        justify-content: center
-
-        align-items: flex-start
-
-    .link
-        opacity: 1
-        font-size: 3rem
-        //align-self: center
-        color: var(--grey-1)
-        margin: 0
-        &:link, &:visited
-            color: var(--grey-1)
-        &:not(:first-child)
-            margin-top: 4rem
-    .insta
-        position: absolute
-
 .hidden
-    left: -30rem
+    left: -20rem
