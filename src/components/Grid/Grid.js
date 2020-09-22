@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import classes from './Grid.module.sass'
 
 import { Link } from 'react-router-dom'
 
-const grid = (props) => {
+const Grid = (props) => {
+    const [columns, setColumns] = useState(3)
     let elements
     if(props.type === 'images'){
         elements = props.elements.map((element , index)=> (
@@ -29,7 +30,17 @@ const grid = (props) => {
     let v1, v2, v3
     let vs = []
     console.log('[EL]', elements)
-    const n = 3
+
+    let n = 3                           // Numero de columnas
+    window.addEventListener('resize', () => {
+        console.log('resize')
+
+        if(window.innerWidth < 800){
+            console.log('goootin')
+            n = 2
+        }
+    });
+    
     for (let i=0; i<n; i++){
         vs.push([])
         let c = 0 + i
@@ -57,4 +68,4 @@ const grid = (props) => {
     )
 }
 
-export default grid
+export default Grid
