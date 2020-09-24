@@ -11,7 +11,7 @@ import leftArrow from '../../assets/svg/left-arrow.png'
 
 const navbar = (props) => {
     return (
-        <nav className={classes.nav + ' '+ (props.shrink?classes.shrink:null)}>
+        <nav className={classes.nav + ' '+ (props.shrink?classes.shrink:null) +' '+(props.mode ==='mobile'?classes.mobile:null)}>
             <Link to='/home' className={classes.link+' '+classes.title}><h1 className={classes.h1}>Nerea Molina</h1></Link>
             <div onMouseEnter={props.handleMenu} onClick={props.handleMenu} className={classes.ham+' '+(props.disMenu?classes.disable:null)}>
                 <div className={classes.hamContent+' '+classes.hamContent_1}/>

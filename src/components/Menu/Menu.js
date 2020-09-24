@@ -23,6 +23,7 @@ const menu = (props) => {
     )
                 //{sessionLinks}
      return(
+         <>
         <div onMouseLeave={props.handleMenu} className={classes.container+' '+(props.display?null:classes.hidden)}>
             <div className={classes.links}>
                 <NavLink activeStyle={currentStyle} to='/home' className={classes.link}>Home</NavLink>
@@ -35,8 +36,17 @@ const menu = (props) => {
                 <a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/nereamolina__/' className={classes.link +' '+ classes.insta}>
                     <img className={classes.svg} src={Instagram} alt='INSTAGRAM'/>
                 </a>
+         <a href="#" className={classes.link+' '+classes.x} onClick={(e) => {
+             e.preventDefault()
+             props.handleMenu()
+         }}>x</a>
             </div>
         </div>
+         <div className={classes.backdrop +' '+(props.display?null:classes.backHidden)} onMouseDown={() => {
+                console.log('back activated')
+                props.handleMenu()
+         }}/>
+         </>
     )
 }
 

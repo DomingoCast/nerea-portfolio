@@ -1,4 +1,3 @@
-
 .nav
     padding: 5rem 10rem
     position: fixed
@@ -113,61 +112,6 @@
     &_3
         width: 70%
 
-// ######### USELESS ###########
-
-.menu
-    transition: all .4s ease-out
-    position: fixed
-    top: 0
-    left: 0
-    height: 100%
-    width: 100%
-    //background: rgba(var(--grey-3), .7)
-    background: var(--grey-3)
-    opacity: .90
-    z-index: 7000
-    display: flex
-
-    flex-flow: row-reverse
-
-    justify-content: space-between
-    align-items: center
-    padding: 5rem
-    .arrow
-        width: 2rem
-        height: 4rem
-        transform: rotate(180deg)
-    .links
-        display: flex
-        flex-flow: column
-        justify-content: center
-
-        align-items: flex-start
-
-    .link
-        opacity: 1
-        font-size: 3rem
-        //align-self: center
-        color: var(--grey-1)
-        margin: 0
-        &:link, &:visited
-            color: var(--grey-1)
-        &:not(:first-child)
-            margin-top: 4rem
-    .insta
-        position: absolute
-        left: 50%
-        transform: translateX(-50%)
-        bottom: 6rem
-        .svg
-            height: 3rem
-            width: 3rem
-            margin: 0
-
-.menuHidden
-    opacity: 0
-    left: 100%
-
 .hidden
     display: none
 
@@ -178,4 +122,14 @@
   .nav
       padding: 3% 5%
       position: fixed
+
+@media screen and (max-width: 40em)
+    .nav
+        justify-content: space-between
+        align-items: center
+    .ham
+        position: relative
+        top: 0
+        left: 0
+        transform: scale(.70)
 
