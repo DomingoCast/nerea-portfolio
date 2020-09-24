@@ -1,10 +1,17 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import classes from './Grid.module.sass'
 
 import { Link } from 'react-router-dom'
 
 const Grid = (props) => {
-    const [columns, setColumns] = useState(3)
+
+    const [columns, setColumns] = useState(3) //number of columns in grid
+
+    useEffect( () => {
+        queryColumns()
+    }, [] )
+
+
     let elements
     if(props.type === 'images'){
         elements = props.elements.map((element , index)=> (
@@ -30,23 +37,36 @@ const Grid = (props) => {
     let v1, v2, v3
     let vs = []
     console.log('[EL]', elements)
-
-    let n = 3                           // Numero de columnas
-    window.addEventListener('resize', () => {
-        console.log('resize')
-
-        if(window.innerWidth < 800){
-            console.log('goootin')
-            n = 2
-        }
-    });
     
-    for (let i=0; i<n; i++){
+    // GRID WINDOW RESIZE
+    
+    const queryColumns = () => {
+        console.log('resize')
+        if(window.innerWidth < 400){
+            if(columns !== 1){
+                setColumns(1)
+            }
+        }else if(window.innerWidth < 800){
+            if (columns !== 2){
+                setColumns(2)
+            }
+        } else {
+            if(columns !== 3){
+                setColumns(3)
+            }
+        }
+
+    }
+
+    window.addEventListener('resize', queryColumns);
+
+    
+    for (let i=0; i<columns; i++){
         vs.push([])
         let c = 0 + i
         while(c<elements.length){
             vs[i].push(elements[c])
-            c += n
+            c += columns
         }
     }
     console.log('[VS]', vs)
