@@ -49,7 +49,7 @@ const Layout = (props) => {
     return (
         <div className={classes.container}>
         <Navbar mode={disMode} shrink={navShrink} disMenu={disMenu} handleMenu={(e) => disMenu?console.log('nice try'):handleMenu(e)}/>
-        <Menu display={disMenu} handleMenu={handleMenu}/>
+        <Menu display={disMenu} handleMenu={handleMenu} mode={disMode}/>
             <div className={classes.children}>
                 {props.children}
             </div>
