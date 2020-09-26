@@ -5,7 +5,9 @@ import classes from './Layout.module.sass'
 
 import Navbar from '../Navbar/Navbar'
 import Menu from '../Menu/Menu'
-//Menu/
+
+import Footer from '../Footer/Footer'
+//Footer/
 
 const Layout = (props) => {
     const [navShrink, setNavShrink] = useState(false)
@@ -47,13 +49,16 @@ const Layout = (props) => {
 
 
     return (
+        <>
         <div className={classes.container}>
-        <Navbar mode={disMode} shrink={navShrink} disMenu={disMenu} handleMenu={(e) => disMenu?console.log('nice try'):handleMenu(e)}/>
-        <Menu display={disMenu} handleMenu={handleMenu} mode={disMode}/>
+            <Navbar mode={disMode} shrink={navShrink} disMenu={disMenu} handleMenu={(e) => disMenu?console.log('nice try'):handleMenu(e)}/>
+            <Menu display={disMenu} handleMenu={handleMenu} mode={disMode}/>
             <div className={classes.children}>
                 {props.children}
             </div>
         </div>
+        <Footer />
+        </>
     )
 }
 

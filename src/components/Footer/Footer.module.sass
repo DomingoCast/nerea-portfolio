@@ -1,0 +1,35 @@
+.container
+    padding: 4rem
+    width: 100%
+    background: var(--grey-3)
+    color: var(--grey-1)
+
+.link   
+    position: relative
+    z-index: 55
+    transition: all .2s
+    &:link, &:visited
+        color: var(--grey-1)
+        font-weight: 600
+        font-style: italic
+        text-decoration: none
+    &:hover
+        color: var(--grey-3)
+        .backLink
+            height: 100%
+
+.copy
+    margin-bottom: .5rem
+
+.backLink
+    position: absolute
+    width: 107%
+    height: 0
+    bottom: 0
+    left: -2%
+    transition: height .2s
+    background: var(--grey-1)
+    transform: skew(-20deg)
+    z-index: -1
+    border-radius: 2px
+    
