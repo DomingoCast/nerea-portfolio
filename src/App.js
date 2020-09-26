@@ -15,14 +15,15 @@ function App() {
   return (
     <>
         <Switch>
-            <Route path="/title" component={Title} exact/>
+            <Route path="/" component={Title} exact/>
             <Layout>
                     <Route path="/home" component={Home}/>
                     <Route path="/aboutme" component={AboutMe}/>
                     <Route path="/contact" component={Contact}/>
                     <Route path="/session/:id" component={Session}/>
-                    <Route path="404" component={NotFound}/>
+                    <Route path="/404" component={NotFound}/>
             </Layout>
+                    <Redirect from="/" to="/404"/>
         </Switch>
       </>
   );
