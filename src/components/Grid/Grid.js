@@ -15,7 +15,7 @@ const Grid = (props) => {
     let elements
     if(props.type === 'images'){
         elements = props.elements.map((element , index)=> (
-            <div className={classes.image}>
+            <div key={index} className={classes.image}>
                 <a href="#" onClick={(event) => props.click(event, index)} key={index}className={classes.link}>
                    <img className={classes.element} src={element}/>
                 </a>
@@ -74,8 +74,8 @@ const Grid = (props) => {
     //for(el of props.elements){
         
     //}
-    const newElements = vs.map( row => (
-            <div className={classes.column}> {row} </div>
+    const newElements = vs.map( (row, index) => (
+            <div key={index} className={classes.column}> {row} </div>
         )
     )
 

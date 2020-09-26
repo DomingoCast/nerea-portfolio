@@ -14,10 +14,10 @@ const Layout = (props) => {
 
     useEffect( () => {
         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-            console.log('mobile')
+            //console.log('mobile')
             setDM('mobile')
         }else{
-            console.log('desktop')
+            //console.log('desktop')
             setDM('desktop')
         }
 
@@ -28,7 +28,7 @@ const Layout = (props) => {
             e.preventDefault()
         }
 
-        console.log('MENU', disMenu)
+        //console.log('MENU', disMenu)
         if(disMenu){
             setDisMenu( false )
         } else {

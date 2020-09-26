@@ -14,19 +14,19 @@ const currentStyle = {
 }
 
 const menu = (props) => {
-    console.log('[SESSIONS]', sessions)
+    //console.log('[SESSIONS]', sessions)
     const sessionLinks = Object.keys(sessions).map(sessionID => {
         const session = sessions[sessionID]
         return(
-            <NavLink activeStyle={currentStyle} to={'/session/'+session.path}
+            <NavLink key={sessionID} activeStyle={currentStyle} to={'/session/'+session.path}
             className={classes.session+' '+classes.link}>{session.name}</NavLink>
         )}
     )
                 //{sessionLinks}
     const menuMob = () => {
-            console.log('menuMob')
+            //console.log('menuMob')
         if (props.menu === 'mobile') {
-            console.log('mobile')
+            //console.log('mobile')
             props.handleMenu()
         }
     }
@@ -51,7 +51,7 @@ const menu = (props) => {
             </div>
         </div>
          <div className={classes.backdrop +' '+(props.display?null:classes.backHidden)} onMouseDown={() => {
-                console.log('back activated')
+                //console.log('back activated')
                 props.handleMenu()
          }}/>
          </>

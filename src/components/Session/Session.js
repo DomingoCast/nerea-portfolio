@@ -13,6 +13,7 @@ const Session = (props) => {
     const [images, setImages] = useState(null)
     const [displayPU, setDisplayPU] = useState(false)
     const [currImg, setCImg] = useState(null)
+    const [lLocation, setLoc] = useState(null)
 
     const popItUp = (e, pos) => {
         e.preventDefault()
@@ -49,6 +50,7 @@ const Session = (props) => {
     }
 
     useEffect(() => {
+        console.log('HOLLLLLLLLLLLA')
         const loc= window.location.href.split('/')[window.location.href.split('/').length - 1]
         import( '../../assets/database/'+loc+'/index')
             .then( raw => {
@@ -68,9 +70,13 @@ const Session = (props) => {
                 )
             })
 
-    }, [])
+    }, [lLocation])
     
-    //console.log('[L]', location)
+    const loca = window.location.href.split('/')[window.location.href.split('/').length - 1]
+    if (loca != lLocation){
+        setLoc(loca)
+    }
+    console.log('[L]', loca)
     return(
         <>
         {content}
