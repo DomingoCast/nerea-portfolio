@@ -13,7 +13,7 @@ const navbar = (props) => {
     return (
         <nav className={classes.nav + ' '+ (props.shrink?classes.shrink:null) +' '+(props.mode ==='mobile'?classes.mobile:null)}>
             <Link to='/home' className={classes.link+' '+classes.title}><h1 className={classes.h1}>Nerea Molina</h1></Link>
-            <div onMouseEnter={props.handleMenu} onClick={props.handleMenu} className={classes.ham+' '+(props.disMenu?classes.disable:null)}>
+            <div onMouseEnter={props.handleMenu} onClick={props.handleMenu} className={classes.ham+' '+(props.disMenu?classes.ocult:null)}>
                 <div className={classes.hamContent+' '+classes.hamContent_1}/>
                 <div className={classes.hamContent+' '+classes.hamContent_2}/>
                 <div className={classes.hamContent+' '+classes.hamContent_3}/>

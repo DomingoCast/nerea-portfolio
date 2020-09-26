@@ -14,7 +14,7 @@ const currentStyle = {
 }
 
 const menu = (props) => {
-    document.addEventListener('click', (e) => console.log(e.target))
+    //document.addEventListener('click', (e) => console.log(e.target))
 
     const menuMob = () => {
         console.log('menuMob')
@@ -24,6 +24,10 @@ const menu = (props) => {
             props.handleMenu()
         }
     }
+
+    //if(props.display && props.mode=="mobile"){
+        //document.addEventListener('scroll')
+    //}
 
     const sessionLinks = Object.keys(sessions).map(sessionID => {
         const session = sessions[sessionID]
