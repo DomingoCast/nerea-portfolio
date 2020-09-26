@@ -36,12 +36,12 @@ const Grid = (props) => {
     }
     let v1, v2, v3
     let vs = []
-    console.log('[EL]', elements)
+    //console.log('[EL]', elements)
     
     // GRID WINDOW RESIZE
     
     const queryColumns = () => {
-        console.log('resize')
+        //console.log('resize')
         if(window.innerWidth < 400){
             if(columns !== 1){
                 setColumns(1)
@@ -69,7 +69,7 @@ const Grid = (props) => {
             c += columns
         }
     }
-    console.log('[VS]', vs)
+    //console.log('[VS]', vs)
 
     //for(el of props.elements){
         

@@ -14,33 +14,36 @@ const currentStyle = {
 }
 
 const menu = (props) => {
-    //console.log('[SESSIONS]', sessions)
+    document.addEventListener('click', (e) => console.log(e.target))
+
+    const menuMob = () => {
+        console.log('menuMob')
+        console.log(props)
+        if (props.mode === 'mobile') {
+            console.log('mobile')
+            props.handleMenu()
+        }
+    }
+
     const sessionLinks = Object.keys(sessions).map(sessionID => {
         const session = sessions[sessionID]
         return(
-            <NavLink key={sessionID} activeStyle={currentStyle} to={'/session/'+session.path}
+            <NavLink key={sessionID} onClick={menuMob} activeStyle={currentStyle} to={'/session/'+session.path}
             className={classes.session+' '+classes.link}>{session.name}</NavLink>
         )}
     )
                 //{sessionLinks}
-    const menuMob = () => {
-            //console.log('menuMob')
-        if (props.menu === 'mobile') {
-            //console.log('mobile')
-            props.handleMenu()
-        }
-    }
      return(
          <>
-        <div onMouseLeave={props.handleMenu} className={classes.container+' '+(props.display?null:classes.hidden)}>
+        <div onMouseLeave={props.mode!=='mobile'?props.handleMenu:null} className={classes.container+' '+(props.display?null:classes.hidden)}>
             <div className={classes.links}>
                 <NavLink activeStyle={currentStyle} to='/home' className={classes.link} onClick={menuMob} >Home</NavLink>
                 <div className={classes.sessionsContainer}>
                     <span className={classes.span}>SESSIONS</span>
                     {sessionLinks}
                 </div>
-                <NavLink activeStyle={currentStyle} to='/aboutme' className={classes.link}>About me</NavLink>
-                <NavLink activeStyle={currentStyle} to='/contact' onClick={props.handleMenu}className={classes.link}>Contact</NavLink>
+                <NavLink onClick={menuMob} activeStyle={currentStyle} to='/aboutme' className={classes.link}>About me</NavLink>
+                <NavLink onClick={menuMob} activeStyle={currentStyle} to='/contact' className={classes.link}>Contact</NavLink>
                 <a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/nereamolina__/' className={classes.link +' '+ classes.insta}>
                     <img className={classes.svg} src={Instagram} alt='INSTAGRAM'/>
                 </a>

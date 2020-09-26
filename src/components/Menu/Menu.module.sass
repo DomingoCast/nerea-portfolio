@@ -88,6 +88,7 @@
         width: 70%
 
 .x
+    display: none
     position: absolute
     bottom: 15%
     left: 50%
@@ -107,3 +108,37 @@
 .backHidden
     display: none
     
+
+@media screen and (max-width: 40em)
+    .container
+        width: 100%
+    .links
+        height: 43rem
+        margin: 0
+    .link
+        &:visited, &:link
+            font-size: 3rem
+            margin: 0
+    .sessionsContainer
+        .span
+            font-size: 3rem
+        .link
+            font-size: 2.7rem
+    .svg
+        width: 3rem
+        height: 3rem
+        margin: 0
+    .insta
+        padding-top: 3rem
+        //transform: translateX(-50%)
+        align-self: center
+        margin: 0
+
+    .x
+        display: block
+        bottom: 13%
+    .backdrop
+        display: none
+.hidden
+    left: -100%
+    z-index: 7999

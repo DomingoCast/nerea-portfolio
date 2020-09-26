@@ -58,10 +58,10 @@ const Session = (props) => {
                 const data = raw.default
                 //console.log(data.images)
                 setImages(data.images)
+                    //<p className={classes.text}> {data.info.description}</p>
                 setContent(
                 <>
                     <h2 className={classes.h2}> {data.info.name} </h2>
-                    <p className={classes.text}> {data.info.description}</p>
                     <Grid type="images" click={(e, pos) => {
                         console.log('[clock]', e, pos)
                         popItUp(e, pos)
