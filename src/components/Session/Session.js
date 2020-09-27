@@ -25,13 +25,13 @@ const Session = (props) => {
         setDisplayPU(true)
     }
     const popDown = (e) => {
-        e.preventDefault()
+        if(e){e.preventDefault()}
         console.log('[DOOOOWN]')
         setDisplayPU(false)
     }
     const next = (e) => {
         console.log('NEXT')
-        e.preventDefault()
+        if(e){e.preventDefault()}
         if(currImg === images.length - 1){
             setCImg(0)
         } else {
@@ -41,7 +41,7 @@ const Session = (props) => {
 
     const previous = (e) => {
         console.log('PREV')
-        e.preventDefault()
+        if(e){e.preventDefault()}
         if(currImg === 0){
             setCImg(images.length - 1)
         } else {
